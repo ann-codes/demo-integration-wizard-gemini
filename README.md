@@ -47,7 +47,7 @@ npm run dev
 ```bash
 cd backend
 cp sample.env .env
-# Fill in your GEMINI_API_KEY and HUBSPOT_API_KEY in .env
+# Fill in your GEMINI_API_KEY in .env
 npm install
 npm run dev
 # Runs on http://localhost:3032
@@ -84,3 +84,5 @@ dynamic_lists:
   - name: Hot Cloud Security Leads
     filter: Surge_Score > 50
 ``` 
+
+Note - there is an "Integrate with HubSpot" botton that auto-returns success, to acctually integrate with HS later(?)

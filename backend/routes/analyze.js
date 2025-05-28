@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { analyzeProductDescription } = require('../utils/gemini');
+const { analyzeProductDescription, MAX_TOPICS } = require('../utils/gemini');
 
 // POST /analyze
 router.post('/', async (req, res) => {
@@ -11,7 +11,8 @@ router.post('/', async (req, res) => {
 
   try {
     const topics = await analyzeProductDescription(product_description);
-    res.json({ topics });
+    const maxTopics = topics?.slice(0, 8)
+    res.json({ topics: maxTopics });
   } catch (error) {
     console.error('Error in analyze endpoint:', error);
     res.status(500).json({ error: error.message });
