@@ -46,7 +46,7 @@ npm run dev
 
 ```bash
 cd backend
-cp .env.example .env
+cp sample.env .env
 # Fill in your GEMINI_API_KEY and HUBSPOT_API_KEY in .env
 npm install
 npm run dev
