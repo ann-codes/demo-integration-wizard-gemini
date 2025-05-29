@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
 
   try {
     const topics = await analyzeProductDescription(product_description);
-    const maxTopics = topics?.slice(0, 8)
+    const maxTopics = topics?.slice(0, MAX_TOPICS)
     res.json({ topics: maxTopics });
   } catch (error) {
     console.error('Error in analyze endpoint:', error);

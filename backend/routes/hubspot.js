@@ -1,12 +1,12 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const axios = require('axios');
+const axios = require("axios");
 
 // POST /create-hubspot-fields
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   const { cluster, topics } = req.body;
   if (!cluster || !topics) {
-    return res.status(400).json({ error: 'Missing cluster or topics' });
+    return res.status(400).json({ error: "Missing cluster or topics" });
   }
 
   // Simulate HubSpot property creation
@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
     const fields = [
       `${cluster}_Surge_Score`,
       `${cluster}_Topic_Count`,
-      `${cluster}_Last_Surge_Date`
+      `${cluster}_Last_Surge_Date`,
     ];
     res.json({ success: true, fields });
   } catch (err) {
